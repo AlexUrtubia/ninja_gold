@@ -44,5 +44,14 @@
             </form>
         </div>
     </div>
+    <div class="container actividades">
+        {% for j in request.session.jugadas %}
+            {% if j.0 < 0 %}
+                <p>Has perdido {{j.0}} oro in {{j.1}} {{j.2}}</p>
+            {% else %}
+                <p>Has ganado {{j.0}} oro in {{j.1}} {{j.2}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
 </body>
 </html>
