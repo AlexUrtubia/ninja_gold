@@ -10,7 +10,7 @@ def inicio(request):
     return render(request, 'index.html')
 
 def process_money(request):
-    time = datetime.now().strftime("a las %H:%M %p del %d-%m-%Y")
+    time = datetime.now().strftime("a las %H:%M:%S %p del %d-%m-%Y")
     if "farm" in request.POST:
         farm_prize = randint(10,20)
         request.session['gold_amount'] += farm_prize
